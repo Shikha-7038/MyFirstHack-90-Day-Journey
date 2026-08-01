@@ -1,18 +1,18 @@
-# Day 7 – DNS Deep Dive & Week 1 Reflection
+# 🌐 Day 7 – DNS Deep Dive & Week 1 Reflection
 
-**Date:** July 30, 2026
+**📅 Date:** 30 July 2026
 
 ---
 
-# Objective
+## 🎯 Objective
 
 Go beyond the basic idea of DNS and understand how DNS queries actually travel across the internet, why caching is essential, how DNS attacks work, and perform hands-on exercises using browser Developer Tools and `nslookup`.
 
 ---
 
-# What I Learned
+## 📚 What I Learned
 
-## 1. The Complete DNS Resolution Process
+### 1️⃣ The Complete DNS Resolution Process
 
 When I type a domain name like `google.com`, my computer doesn't immediately know its IP address. Instead, a sequence of systems work together to find it.
 
@@ -49,7 +49,7 @@ Recursive Resolver
 My Computer
 ```
 
-### My Understanding
+### 💡 My Understanding
 
 One thing that became much clearer today was the role of the **Recursive DNS Resolver**.
 
@@ -87,22 +87,20 @@ The Root DNS Server never contacts the next server itself. It only tells the Rec
 
 ---
 
-# 2. DNS Caching
+## 🗂️ 2. DNS Caching
 
 DNS responses are stored temporarily so the same lookup doesn't have to be repeated.
 
 Caching occurs at multiple places:
 
-- Browser
-- Operating System
-- Router
-- Recursive DNS Resolver
+- 🌐 Browser
+- 💻 Operating System
+- 📡 Router
+- 🛰️ Recursive DNS Resolver
 
 Each cache stores its own copy independently.
 
----
-
-## TTL (Time To Live)
+### ⏳ TTL (Time To Live)
 
 Every DNS record includes a **TTL (Time To Live)** value.
 
@@ -110,14 +108,14 @@ TTL tells devices:
 
 > "Keep this DNS record for this amount of time before asking again."
 
-### My Understanding
+### 💡 My Understanding
 
 I learned that:
 
-- TTL is **not fixed**.
-- Every website owner decides its own TTL.
-- Different websites can use different TTL values.
-- Administrators can change TTL whenever needed.
+- TTL is **not fixed**
+- Every website owner decides its own TTL
+- Different websites can use different TTL values
+- Administrators can change TTL whenever needed
 - Large companies like Google may return different IP addresses depending on:
   - User location
   - Server load
@@ -126,19 +124,19 @@ I learned that:
 
 ---
 
-# 3. Why DNS Caching Matters
+## 🚀 3. Why DNS Caching Matters
 
 Caching reduces the number of DNS requests across the internet.
 
 Without caching:
 
-- Every website visit would contact Root DNS Servers.
-- Then TLD Servers.
-- Then Authoritative DNS Servers.
+- Every website visit would contact Root DNS Servers
+- Then TLD Servers
+- Then Authoritative DNS Servers
 
 This would make the internet much slower.
 
-### Security Perspective
+### 🔒 Security Perspective
 
 Caching improves performance but also creates a security risk.
 
@@ -146,9 +144,9 @@ If an attacker successfully poisons a DNS cache, every user relying on that cach
 
 ---
 
-# 4. DNS Attacks
+## ⚠️ 4. DNS Attacks
 
-## DNS Cache Poisoning
+### 🧪 DNS Cache Poisoning
 
 The attacker tricks a Recursive Resolver into storing a fake IP address.
 
@@ -158,7 +156,7 @@ Every user using that resolver is redirected to the attacker's website.
 
 ---
 
-## DNS Hijacking
+### 🎯 DNS Hijacking
 
 Instead of changing cached records, the attacker changes which DNS server the victim uses.
 
@@ -175,13 +173,13 @@ Now every DNS request goes to the attacker's DNS server first.
 
 ---
 
-## DNS Tunneling
+### 📦 DNS Tunneling
 
 Attackers hide stolen information inside DNS requests because DNS traffic is usually allowed through firewalls.
 
 ---
 
-## Typosquatting
+### 🎭 Typosquatting
 
 Attackers register domains that closely resemble legitimate websites.
 
@@ -197,9 +195,7 @@ paypa1.com
 
 Users accidentally visit the fake website.
 
----
-
-## My Understanding
+### 💡 My Understanding
 
 I wondered whether **DNS Hijacking** and **DNS Cache Poisoning** could happen together.
 
@@ -214,7 +210,7 @@ Both attacks work together to redirect victims.
 
 ---
 
-# Practical Task 1 – Running DNS Queries
+## 🛠️ Practical Task 1 – Running DNS Queries
 
 I used Windows Command Prompt and the `nslookup` command.
 
@@ -232,13 +228,13 @@ nslookup google.com 8.8.8.8
 nslookup google.com 1.1.1.1
 ```
 
-## My Findings
+### 🔍 My Findings
 
 - Google resolved to a different IP address than the example shown in the course.
 - `cnn.com` returned multiple IPv4 and IPv6 addresses.
 - Google's DNS and Cloudflare's DNS returned different valid IP addresses for the same domain.
 
-### My Learning
+### 💡 My Learning
 
 Initially, I thought one website always had one IP address.
 
@@ -253,7 +249,7 @@ DNS may return different IP addresses depending on:
 
 ---
 
-# Practical Task 2 – Observing DNS Caching
+## 🧪 Practical Task 2 – Observing DNS Caching
 
 Using Chrome Developer Tools:
 
@@ -267,14 +263,14 @@ Timing
 
 I measured DNS lookup time.
 
-## Results
+### 📊 Results
 
 | Test | DNS Lookup Time |
 |------|----------------:|
 | First Request (Disable Cache Enabled) | **363 ms** |
 | Second Request (Cache Enabled) | **0 ms** |
 
-### Observation
+### 👀 Observation
 
 When browser caching was enabled, Chrome reused the cached DNS record.
 
@@ -284,9 +280,9 @@ This practical task helped me understand why DNS caching makes websites load fas
 
 ---
 
-# Additional Questions I Explored
+## ❓ Additional Questions I Explored
 
-## Public IP vs Private IP
+### 🌍 Public IP vs Private IP
 
 I confirmed that:
 
@@ -296,11 +292,11 @@ I confirmed that:
 
 ---
 
-## College Wi-Fi
+### 🏫 College Wi-Fi
 
 I wanted to know whether people using the same Wi-Fi could identify exactly which person visited which website.
 
-### My Understanding
+### 💡 My Understanding
 
 - Websites only see the shared Public IP.
 - They cannot identify the individual laptop.
@@ -308,7 +304,7 @@ I wanted to know whether people using the same Wi-Fi could identify exactly whic
 
 ---
 
-## Different Networks Produce Different Results
+### 🔄 Different Networks Produce Different Results
 
 I compared my college Wi-Fi with my mobile hotspot.
 
@@ -323,22 +319,32 @@ while the websites themselves remain the same.
 
 ---
 
-# Key Takeaways
+## ✅ Key Takeaways
 
-- DNS resolution is performed by a **Recursive Resolver**, not by DNS servers communicating directly with one another.
-- DNS caching occurs at multiple layers and significantly improves internet performance.
-- TTL determines how long cached DNS records remain valid.
-- Large websites use multiple IP addresses for performance and high availability.
+- The **Recursive Resolver** performs the DNS lookup by communicating with different DNS servers.
+- DNS caching occurs at multiple layers and greatly improves internet performance.
+- TTL controls how long cached DNS records remain valid.
+- Large websites use multiple IP addresses for performance and availability.
 - DNS attacks often exploit trust in DNS rather than attacking websites directly.
-- `nslookup` and Chrome Developer Tools are useful tools for observing DNS behaviour.
-- Practical experiments made networking concepts much easier to understand than theory alone.
+- `nslookup` and Chrome Developer Tools are valuable for understanding real DNS behavior.
+- Performing practical experiments made networking concepts much easier to understand than theory alone.
 
 ---
 
-# Week 1 Reflection
+## 💭 Week 1 Reflection
 
 Completing the first week changed the way I think about the internet.
 
-Instead of simply using websites, I now understand many of the steps that happen behind the scenes—from DNS resolution and IP addressing to routing, caching, and browser requests.
+Instead of simply using websites, I now understand many of the steps happening behind the scenes—from DNS resolution and IP addressing to routing, caching, and browser requests.
 
-The hands-on exercises with `tracert`, `nslookup`, and Chrome Developer Tools connected the theory with real-world networking, making the concepts much easier to understand.
+The hands-on exercises with `tracert`, `nslookup`, and Chrome Developer Tools connected the theory with real-world networking, making these concepts much easier to understand.
+
+---
+
+## 🎯 Conclusion
+
+Day 7 strengthened my understanding of one of the internet's most important services—DNS. I learned that DNS is much more than a simple "phonebook of the internet." It is a distributed system that relies on recursive queries, caching, and multiple layers of servers to resolve domain names efficiently.
+
+By combining theory with practical exercises, I gained a clearer understanding of how DNS works in real-world environments, why caching is essential for performance, and how attackers can exploit weaknesses through techniques like cache poisoning, hijacking, tunneling, and typosquatting.
+
+This lesson also reinforced the importance of verifying concepts through hands-on practice rather than relying only on diagrams or theoretical explanations.

@@ -1,10 +1,10 @@
-# Day 3 – Personal Security Audit
+# 📅 Day 3 – Personal Security Audit
 
-**Date:** 26 July 2026
+**📅 Date:** 26 July 2026
 
 ---
 
-## Objective
+# 🎯 Objective
 
 The objective of today's lesson was to understand what a security audit is, learn the standard audit methodology used by cybersecurity professionals, and perform my first personal security audit on my own digital accounts and devices.
 
@@ -12,7 +12,7 @@ Unlike previous lessons that focused mainly on concepts, today's lesson emphasiz
 
 ---
 
-# What is a Security Audit?
+# 📖 What is a Security Audit?
 
 A security audit is a structured process used to identify the gap between the current security of a system and the level of security it should have.
 
@@ -33,9 +33,9 @@ Although their objectives differ, both roles follow a structured audit process.
 
 ---
 
-# The Five-Step Audit Methodology
+# 🛠️ The Five-Step Audit Methodology
 
-## 1. Scope
+## 📌 1. Scope
 
 The first step of any audit is defining what will be assessed.
 
@@ -54,11 +54,11 @@ This helped me understand that an audit cannot begin until the target systems ar
 
 ---
 
-## 2. Intelligence
+## 🔍 2. Intelligence
 
 This phase focuses on gathering publicly available information before looking for weaknesses.
 
-### Have I Been Pwned
+### 🌐 Have I Been Pwned
 
 I checked my primary email address.
 
@@ -68,7 +68,7 @@ I checked my primary email address.
 
 This indicated that my primary email has not appeared in any publicly known breach database.
 
-### Epieos
+### 🌐 Epieos
 
 I searched the same email using Epieos.
 
@@ -86,7 +86,7 @@ This was an important lesson about understanding OSINT results correctly.
 
 ---
 
-# What I Learned About OSINT
+# 🌍 What I Learned About OSINT
 
 Today's lesson showed me that attackers often begin by collecting publicly available information instead of immediately attacking systems.
 
@@ -100,11 +100,11 @@ This highlighted the importance of understanding my own digital footprint.
 
 ---
 
-## 3. Exposure Assessment
+## 🚨 3. Exposure Assessment
 
 This phase focused on identifying my current security risks.
 
-### Active Sessions
+### 💻 Active Sessions
 
 I reviewed every device currently signed into my Google account.
 
@@ -121,7 +121,7 @@ This confirmed there were no suspicious active sessions.
 
 ---
 
-### Two-Factor Authentication Review
+### 🔐 Two-Factor Authentication Review
 
 I reviewed the security settings of my important accounts.
 
@@ -137,7 +137,7 @@ One important lesson I learned was that SMS-based verification is generally weak
 
 ---
 
-### The "Master Key" Concept
+### 🔑 The "Master Key" Concept
 
 One of today's biggest takeaways was understanding why an email account is considered the **master key**.
 
@@ -147,7 +147,7 @@ This completely changed how I think about protecting my email account.
 
 ---
 
-## 4. Severity Assessment
+## ⚖️ 4. Severity Assessment
 
 I learned that every finding should be prioritized according to its impact.
 
@@ -162,7 +162,7 @@ Instead of treating every issue equally, I learned to classify them by severity.
 
 ---
 
-## 5. Remediation
+## ✅ 5. Remediation
 
 Every audit should end with action.
 
@@ -174,7 +174,7 @@ This demonstrated that a security audit should produce practical improvements, n
 
 ---
 
-# Challenges Faced
+# 🚧 Challenges Faced
 
 During this activity, I encountered several questions that helped deepen my understanding.
 
@@ -186,7 +186,7 @@ Researching these questions helped me better understand the concepts instead of 
 
 ---
 
-# Skills Practiced
+# 💻 Skills Practiced
 
 - Security Auditing
 - Open Source Intelligence (OSINT)
@@ -199,7 +199,7 @@ Researching these questions helped me better understand the concepts instead of 
 
 ---
 
-# Key Takeaways
+# 📚 Key Takeaways
 
 - A professional security audit follows five structured phases:
   - Scope
@@ -209,20 +209,15 @@ Researching these questions helped me better understand the concepts instead of 
   - Remediation
 
 - OSINT tools can reveal publicly available information linked to an email address.
-
 - My primary email has not appeared in any known public data breaches.
-
 - My Google account contained only recognized active sessions.
-
 - My primary email functions as the recovery point for several important accounts, making it one of the most critical accounts to protect.
-
 - Not every security finding has the same level of risk; prioritization is an essential part of an audit.
-
 - A security audit should always conclude with a practical security improvement.
 
 ---
 
-# Conclusion
+# 🏁 Conclusion
 
 Day 3 marked my first experience performing a structured cybersecurity assessment instead of only studying theory.
 
@@ -232,15 +227,15 @@ This project also became the first artifact in my cybersecurity portfolio and re
 
 ---
 
-## Portfolio Artifact
+# 📄 Portfolio Artifact
 
-# Personal Security Audit Report
+## Personal Security Audit Report
 
 > **Note:** This is a privacy-safe version of my personal security audit report. Personal information such as my email address, network details, and identifiable account information has been removed or generalized.
 
 ---
 
-## Auditor Information
+# 👤 Auditor Information
 
 | Field | Details |
 |-------|---------|
@@ -251,9 +246,9 @@ This project also became the first artifact in my cybersecurity portfolio and re
 
 ---
 
-# 1. Scope
+# 🎯 1. Scope
 
-### Systems and Accounts Assessed
+## Systems and Accounts Assessed
 
 - **Primary Email:** `[REDACTED]`
 - **Key Accounts:**
@@ -269,7 +264,7 @@ This project also became the first artifact in my cybersecurity portfolio and re
 
 ---
 
-# 2. Executive Summary
+# 📋 2. Executive Summary
 
 A personal security assessment was conducted to evaluate the security of my primary digital accounts and devices.
 
@@ -279,7 +274,7 @@ One security improvement was implemented immediately by enabling 2FA on my Linke
 
 ---
 
-# 3. Findings
+# 🔍 3. Findings
 
 ## 🔴 Critical
 
@@ -308,15 +303,15 @@ One security improvement was implemented immediately by enabling 2FA on my Linke
 
 ---
 
-# 4. Actions Taken During Audit
+# ✅ 4. Actions Taken During Audit
 
 - ✅ Enabled Two-Factor Authentication (2FA) on my LinkedIn account.
 
 ---
 
-# 5. Remediation Plan
+# 🛠️ 5. Remediation Plan
 
-## This Week
+## 📅 This Week
 
 - Upgrade my Google account to app-based two-factor authentication.
 - Replace SMS-based 2FA on Amazon with an authenticator app (if supported).
@@ -324,7 +319,7 @@ One security improvement was implemented immediately by enabling 2FA on my Linke
 
 ---
 
-## This Month
+## 📆 This Month
 
 - Review accounts associated with my primary email and remove unused accounts where appropriate.
 - Review passwords and ensure each important account has a strong, unique password.
@@ -332,7 +327,7 @@ One security improvement was implemented immediately by enabling 2FA on my Linke
 
 ---
 
-# Conclusion
+# 🏁 Conclusion
 
 This audit provided practical experience in applying a structured cybersecurity audit methodology.
 
