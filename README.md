@@ -2,117 +2,98 @@
 
 Welcome to my **90-Day Cybersecurity Learning Journey**.
 
-This repository contains my personal notes, practical exercises, and reflections from the **MyFirstHack Foundations** program. Instead of simply completing each lesson, I'm documenting what I learn in my own words to strengthen my understanding and create a portfolio that showcases my progress.
+This repository documents my learning experience through the **MyFirstHack Foundations program**. It contains notes, practical exercises, investigations, and reflections that helped me strengthen my understanding of cybersecurity concepts.
 
-My goal is to build a strong foundation in cybersecurity while developing consistent learning and documentation habits.
+Rather than simply completing lessons, I focused on documenting what I learned in my own words and applying concepts through structured exercises. This repository also serves as a record of my progress and a foundation for my continued development in cybersecurity.
 
 ---
 
 # 🎯 Goals
 
-- Build strong cybersecurity fundamentals
-- Develop the habit of learning consistently
-- Document concepts I learned
-- Complete practical tasks and challenges
-- Create a public portfolio of my learning
-- Prepare for future cybersecurity internships and roles
+- Build a strong foundation in cybersecurity.
+- Develop consistent learning and documentation habits.
+- Understand security concepts through practical exercises.
+- Document investigations, findings, and recommendations.
+- Build a portfolio that demonstrates my learning and analytical approach.
+- Prepare for future cybersecurity internships and entry-level roles.
 
 ---
 
 # 📚 Topics Covered
 
-Throughout this journey, I will be learning topics such as:
+Throughout this journey, I explored topics including:
 
 - Cybersecurity Fundamentals
-- Computer Basics
-- Networking Fundamentals
-- Internet & DNS
-- IP Addressing
-- Password Security
-- Multi-Factor Authentication
-- Phishing & Social Engineering
-- Digital Footprint & Personal Security Audits
-- Data Security & Privacy
+- Computer and Networking Fundamentals
+- Internet, DNS, and IP Addressing
+- Password Security and Multi-Factor Authentication
+- Phishing and Social Engineering
+- Digital Footprint and Personal Security Audits
+- Data Security and Privacy
 - Web Security
-- Linux
+- Linux and Command-Line Fundamentals
 - Cryptography
-- Web Applications
-- Active Directory
-- Cloud Security
 - Security Operations (SOC)
-- Governance, Risk & Compliance (GRC)
-- And many more...
+- Threat Modelling and Threat Analysis
+- Network Traffic Investigation
+- Linux Investigation and Forensics
+- Vulnerability Triage
+- Cyberattack Analysis and Defensive Strategies
+- Governance, Risk, and Compliance (GRC)
 
 ---
 
 # 📖 Repository Structure
 
-Each day has its own Markdown file containing:
+The repository is organised into learning phases and a dedicated portfolio folder.
 
-- Lesson Summary
-- Key Concepts
-- Practical Tasks
-- Personal Learnings
-- Reflections
-- Important Takeaways
+**Phase1-Foundations/** — Learning notes organised by topic.
+**Portfolio piece/** — A collection of nine documented cybersecurity artifacts created during the journey.
 
-Example:
+The portfolio artifacts cover personal security auditing, phishing analysis, threat modelling, network traffic investigation, network defence planning, Linux investigations, cyberattack analysis, and vulnerability triage.
 
-```
-Day-01.md
-Day-02.md
-Day-03.md
-...
-```
+See **Portfolio piece/README.md** for an overview of the portfolio.
 
 ---
 
 # 💡 Why This Repository?
 
-These notes are **not copied course material**.
+These notes and artifacts document my own learning process. They help me revisit concepts, organise findings, explain security-related observations, and reflect on possible defensive measures.
 
-They are written after studying each lesson, researching concepts, completing practical tasks, and reflecting on what I learned. My aim is to understand the concepts deeply rather than simply collecting information.
+The practical exercises and scenarios provide opportunities to develop analytical thinking and technical documentation skills. Simulated scenarios are identified as such and are not presented as real security incidents.
 
-This repository also serves as a portfolio to demonstrate my learning process and documentation skills.
+
 
 ---
 
 # 🚀 Skills I'm Developing
 
 - Cybersecurity Fundamentals
-- Networking
-- Security Awareness
-- Threat Analysis
-- Documentation
-- Technical Writing
-- Critical Thinking
-- Problem Solving
-- OSINT Basics
-- Digital Security
+- Networking and Network Traffic Analysis
+- Security Awareness and Phishing Analysis
+- Threat Modelling and Risk Analysis
+- Linux Investigation Fundamentals
+- Vulnerability Assessment and Prioritisation
+- Security Documentation and Technical Writing
+- Critical Thinking and Problem Solving
 
 ---
 
 # 📈 Learning Approach
 
-For every lesson, I try to:
-
-- Understand the theory
-- Perform the practical tasks
-- Research unfamiliar concepts
-- Write notes
-- Reflect on key learnings
-- Share progress publicly
+Throughout the journey, I worked to:
+- Understand the theory behind each topic.
+- Complete the practical tasks associated with lessons.
+- Research unfamiliar concepts.
+- Document observations and findings.
+- Reflect on what I learned and what needs further practice.
 
 ---
 
-# 🌱 This Repository is Growing
+# 🌱 Beyond the 90-Day Journey
 
-This repository will continue to grow as I progress through the 90-day journey.
+Completing this journey is a foundation, not the end of my learning.
 
-New notes, practical exercises, diagrams, and reflections will be added regularly.
+My next step is to strengthen my hands-on experience with cybersecurity tools, log analysis, and investigation workflows while continuing to build toward an entry-level defensive security or SOC Analyst opportunity.
 
----
-
-## Thank you for visiting!
-
-If you're also learning cybersecurity, I hope these notes help you in your own journey.
+Thank you for visiting my repository. I hope documenting my learning journey is useful to others exploring cybersecurity as well.
