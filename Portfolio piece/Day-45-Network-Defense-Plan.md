@@ -1,89 +1,100 @@
-# Traffic Investigation Report
+# Network Defense Plan
 
-**Analyst:**  Shikha
-**Analysis Date:**  6 September 2026
-**Engagement:** Network Traffic Capture Investigation  
-**Methodology:** Orient → Question → Filter → Follow → Compare → Document
+**Prepared by:**  Shikha
+**Date:**  6 September 2026
+**Client:** Maya's Clothing Shop (small retail business)  
+**Engagement:** Network Security Assessment and Remediation Plan
 
 ---
 
-## 1. Capture Summary
+## 1. Assessment Summary
 
-- **Source:** Wireshark sample capture `http_with_jpegs.cap`
-- **Total packets:** 483
-- **Time span:** 11 seconds (2004-11-20 03:59:14 to 03:59:25)
+Maya's Clothing Shop has a flat network where payment systems, business devices, IoT devices, and customer Wi-Fi share the same network. The main risks include the lack of network segmentation, default router administrator credentials, an old Wi-Fi password publicly displayed on a chalkboard, outdated security cameras, and no established monitoring or log-review process.
 
-**Headline:** The capture contained HTTP web traffic, including HTML page requests and JPEG image transfers. The investigation found no clear evidence of the attack patterns checked, although unencrypted HTTP traffic was present.
+The most urgent priorities are to separate customer Wi-Fi from payment systems, implement network segmentation, and change the router's default administrator credentials.
 
-## 2. Orientation
+## 2. Network Inventory
 
-### Top protocols (from Protocol Hierarchy)
-
-- IPv4 — 483 packets
-- TCP — 464 packets
-- HTTP — 39 packets
-
-### Busiest conversation (from Conversations, sorted by bytes)
-
-- **Conversation:** `10.1.1.101:3200 ↔ 10.1.1.1:80`
-- **Packets:** 209
-- **Data:** Approximately 204 KB
-- **TCP Stream ID:** 18
-
-### Notable endpoints
-
-- `10.1.1.101`
-- `10.1.1.1`
-- No endpoint stood out as clearly anomalous based on the endpoint information examined.
-
-## 3. Investigation
-
-**Question investigated:** What is the main high-volume HTTP conversation, and does the traffic represent normal web activity or a suspicious network pattern?
-
-### Filters used
-
-```wireshark
-http
-http.response
-tcp.stream eq 18
-tcp.flags.reset == 1
-dns
-```
-
-### Findings from following the thread
-
-Following TCP Stream 18 revealed an HTTP GET request for a JPEG image. The server returned `HTTP/1.1 200 OK`, with `Content-Type: image/jpeg` and `Content-Length: 191515`. This explained the high volume of traffic in the busiest conversation. Other HTTP requests for HTML pages and images were also observed.
-
-## 4. Comparison to Baseline
-
-The traffic was assessed against normal-traffic patterns and the attack patterns checked during this investigation.
-
-| Pattern / Indicator | Assessment | Evidence |
+| Device / System | Category | Holds / Does |
 |---|---|---|
-| Normal traffic | Observed | Following TCP Stream 18 revealed an HTTP request for a JPEG image and a successful `200 OK` response. The high-volume conversation was explained by the image transfer. |
-| Port scan signature | Not observed by the check performed | The filter `tcp.flags.reset == 1` returned no packets, so the investigation did not find evidence of the classic port-scan pattern checked. This filter alone cannot rule out all port scans. |
-| Suspicious DNS | Not observed in this capture | The filter `dns` returned no packets. No DNS traffic was available in this capture to support a suspicious-DNS finding. |
-| Beacon pattern | Not observed | The IO Graph did not show a clear, regular beacon-like pattern of small connections at consistent intervals. |
-| Plaintext exposure | Present | HTTP traffic was present instead of HTTPS, making the application-layer requests and responses readable in Wireshark. |
-| Other / unexplained | No clear finding from the checks performed | The evidence examined did not reveal another clearly unexplained pattern. |
+| Payment tills (2) | Payment | Processes card payments |
+| Security cameras (4) | IoT | Provides security monitoring; cameras have never been updated |
+| Back-office laptop | Data | Stores business records and customer information |
+| Maya's laptop | Personal | Used for business and personal browsing |
+| Staff phones (2) | Staff | Communication and network access |
+| Smart speaker | IoT | Smart assistant |
+| Network printer | Infrastructure | Business printing |
+| Customer Wi-Fi | Guest | Provides customer internet access; shares the main network |
+| ISP-provided router | Infrastructure | Provides internet and network connectivity; default administrator credentials remain in use |
 
-## 5. Verdict and Confidence
+## 3. Prioritised Risks
 
-- **Verdict:** Normal traffic
-- **Confidence:** PROBABLE
+### Critical
 
-**Reasoning:** The evidence examined was consistent with ordinary HTTP web browsing and image retrieval. The busiest conversation was explained by a JPEG image transfer, and the specific checks performed did not reveal clear port-scanning, suspicious-DNS, or beaconing patterns.
+- **Flat network:** All devices share one network, reducing barriers that could prevent a compromised device from reaching other systems and enabling potential lateral movement.
+- **Customer Wi-Fi shares the payment network:** Untrusted customer devices have network access within the same environment as payment systems, increasing exposure and creating payment-security and compliance concerns.
+- **Default router administrator credentials:** The router's default credentials have not been changed, potentially allowing unauthorised management access and changes to network settings.
 
-Confidence is **PROBABLE** rather than **CERTAIN** because the capture contained multiple instances of `TCP Previous segment not captured`, indicating that some TCP segments may be missing. The conclusion is therefore limited to the traffic available for analysis. The absence of a pattern in this capture does not prove that no malicious activity occurred.
+### High
 
-## 6. Recommended Next Steps
+- **Old and exposed Wi-Fi password:** The Wi-Fi password has remained unchanged for three years and is written on a chalkboard, increasing the risk of unauthorised access.
+- **No monitoring or log review:** Suspicious activity could go unnoticed, and limited logging could make an incident more difficult to investigate.
 
-If this were a real engagement:
+### Medium
 
-1. Investigate the external address `209.225.0.6` to determine whether the communication was expected and identify the service or application responsible.
-2. Capture additional traffic from the same host if further evidence is required.
-3. Check the external IP against reputable threat-intelligence sources and validate any matches with additional context.
+- **Outdated security cameras:** The four cameras have never been updated, leaving potential vulnerabilities unresolved and increasing the IoT attack surface.
+- **Back-office laptop containing customer data:** Staff sometimes use the laptop, increasing the risk of data exposure or compromise.
+- **Maya's dual-use laptop:** Business and personal browsing on the same device may increase exposure to security risks.
+- **Staff devices and network printer:** These devices add to the network's attack surface and require appropriate access restrictions and security controls.
+
+### Low
+
+- **Smart speaker:** The device presents an additional IoT and privacy risk, although its immediate business impact was assessed as comparatively limited.
+
+## 4. Recommended Fixes
+
+- **Segment the network:** Separate payment systems, business devices, staff devices, IoT devices, and customer Wi-Fi into distinct security zones. Restrict communication between zones to what is necessary.
+- **Secure the router:** Change the default administrator credentials to a strong, unique password, update router firmware, disable remote administration unless required, and check and configure the firewall.
+- **Improve Wi-Fi security:** Use WPA3 where supported, or strong WPA2 where WPA3 is unavailable. Set a strong, unique Wi-Fi password and remove it from the public chalkboard.
+- **Isolate customer Wi-Fi:** Allow customer devices to access the internet without reaching payment systems, business devices, or router management.
+- **Secure devices:** Update supported cameras and replace unsupported devices. Keep laptops patched, isolate IoT devices where possible, secure the printer, and restrict access to sensitive business information.
+- **Introduce monitoring:** Enable useful logging, monitor important security events, establish a regular log-review process, and investigate suspicious activity.
+- **Improve recovery readiness:** Maintain backups of important business information and establish a basic incident-response process.
+
+## 5. Phased Action Plan
+
+### Do First — Critical, Highest Leverage
+
+- Implement network segmentation.
+- Separate customer Wi-Fi from payment and business networks.
+- Isolate payment systems from unnecessary devices.
+- Change the router's default administrator credentials.
+- Check and configure the router firewall.
+- Change the business Wi-Fi password and remove it from the chalkboard.
+
+### This Week
+
+- Update or replace outdated security cameras.
+- Isolate IoT devices where possible.
+- Secure the back-office laptop and restrict access to customer information.
+- Review staff-device access.
+- Configure basic monitoring and logging.
+- Secure the network printer.
+
+### This Month
+
+- Review accounts and access permissions.
+- Remove unnecessary devices and accounts.
+- Test network segmentation and firewall rules.
+- Establish an incident-response process.
+- Schedule regular security reviews.
+
+## 6. How Maya Will Know It Worked
+
+- Customer devices can access the internet but cannot reach payment systems, business devices, or router management; IoT devices are also restricted from accessing payment systems.
+- The router no longer uses default administrator credentials, firewall protection is configured, business Wi-Fi uses appropriate security, and outdated cameras have been updated or replaced.
+- Important security events are logged, logs are reviewed regularly, sensitive business information has appropriate access restrictions, and the network controls are tested to confirm they work.
 
 ---
 
-**End of Report**
+**End of Plan**

@@ -1,4 +1,5 @@
 # PERSONAL THREAT MODEL
+**Portfolio Artifact #3**
 
 **Model Date:** August 12, 2026  
 **Engagement:** Personal Threat Modelling Exercise  
