@@ -1,6 +1,6 @@
 # 🛡️ Day 19 – Social Engineering
 
-**Date:** [Add date]  
+**Date:** August 11,2026  
 **MyFirstHack 90-Day Journey – Day 19**
 
 ## 🎯 Today's Topic
