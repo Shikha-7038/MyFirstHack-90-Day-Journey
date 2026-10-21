@@ -1,8 +1,7 @@
 # CYBERSECURITY FOUNDATIONS PORTFOLIO
 
 **Author:** Shikha  
-**Contact:** [Add professional email if you want it displayed publicly]  
-**LinkedIn:** https://www.linkedin.com/in/shikha-7038/  
+**LinkedIn:** www.linkedin.com/in/shikha-5948b726b 
 **Completed:** 21 October 2026
 
 ## PORTFOLIO OVERVIEW
@@ -1195,7 +1194,7 @@ Finishing the journey feels like an important milestone. I have a clearer founda
 
 ## CONTACT
 
-- **LinkedIn:** https://www.linkedin.com/in/shikha-7038/
+- **LinkedIn:** www.linkedin.com/in/shikha-5948b726b
 - **Email:** Add your professional email here only if you want it publicly visible.
 
 # END OF PORTFOLIO
