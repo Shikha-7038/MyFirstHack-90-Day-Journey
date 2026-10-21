@@ -1,7 +1,7 @@
 # Traffic Investigation Report
 
-**Analyst:**  
-**Analysis Date:**  
+**Analyst:**  Shikha
+**Analysis Date:**  27 August 2026
 **Engagement:** Network Traffic Capture Investigation  
 **Methodology:** Orient → Question → Filter → Follow → Compare → Document
 
